@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			font-family: "微软雅黑";
+		}
+		
+		body {
+			background: url(images/bg.jpg);
+		}
+		
+		input {
+			border: none;
+		}
+		
+		#divbox {
+			width: 1000px;
+			height: 700px;
+			margin: 30px auto;
+			border-radius: 5px;
+		}
+		
+		#divleft {
+			float: left;
+			height: 700px;
+			width: 280px;
+			background: #2e3238;
+			border-radius: 5px;
+		}
+		
+		#divright {
+			float: right;
+			height: 700px;
+			width: 720px;
+			background: #eeeeee;
+			position: relative;
+			display: none;
+		}
+		
+		#divright #text {
+			width: 620px;
+			height: 75px;
+			background: #eeeeee;
+			/*border-top:1px solid #dddddd;*/
+			border: none;
+			outline: none;
+			resize: none;
+			padding: 30px;
+			overflow-y: auto;
+		}
+		
+		#divright #rightbox1 {
+			height: 50px;
+			width: 680px;
+			margin-left: 20px;
+			text-align: center;
+			font-size: 17px;
+			line-height: 50px;
+			border-bottom: 1px solid #d6d6d6;
+		}
+		
+		#divright #rightbox2 {
+			height: 420px;
+			width: 680px;
+			padding-left: 20px;
+			padding-right: 20px;
+			padding-top: 50px;
+			text-align: center;
+			font-size: 16px;
+			border-bottom: 1px solid #d6d6d6;
+			overflow-x: hidden;
+		}
+		
+		#divleft p {
+			height: 60px;
+			width: 260px;
+		}
+		
+		.p2,
+		.show {
+			margin-bottom: 15px;
+            margin-left: 10px;
+            border-radius: 10px;
+		}
+		
+		#divleft .p1 img {
+			width: 45px;
+			height: 45px;
+			display: block;
+			float: left;
+			margin: 10px;
+			border-radius: 3px;
+		}
+		
+		#divleft .p1 span {
+			height: 60px;
+			width: 180px;
+			display: block;
+			float: right;
+			line-height: 60px;
+			color: #eee;
+			font-size: 16px;
+			font-weight: 500;
+		}
+		
+		#divleft .seh {
+			width: 237px;
+			height: 30px;
+			background: #26292e;
+			font-size: 12px;
+			line-height: 27px;
+			color: #838895;
+			margin: 30px 15px;
+			padding-left: 5px;
+			border: 1px solid #3a3a3a
+		}
+		
+		#divleft .spans {
+			height: 60px;
+			width: 180px;
+			display: block;
+			float: right;
+			line-height: 60px;
+			color: #c4c2c2;
+			font-size: 14px;
+			font-weight: 500;
+		}
+		
+		#divleft .imgs {
+			width: 40px;
+			height: 40px;
+			display: block;
+			float: left;
+			margin: 10px;
+			border-radius: 5px;
+		}
+		
+		#send {
+			width: 90px;
+			height: 30px;
+			border: 1px solid #c1c1c1;
+			border-radius: 5px;
+			background: #fff;
+			position: absolute;
+			cursor: pointer;
+			right: 20px;
+			bottom: 15px;
+		}
+		
+		#mytalk,
+		#utalk {
+			width: 680px;
+			margin-bottom: 15px;
+			margin-top: 5px;
+			padding: 20px 0;
+		}
+		
+		#mytalk img {
+			width: 40px;
+			height: 40px;
+			float: right;
+			display: block;
+			border-radius: 5px;
+			margin-left: 10px;
+		}
+		
+		#mytalk #mp {
+			line-height: 40px;
+			padding: 0 15px;
+			background: #b2e281;
+			float: right;
+			border-radius: 5px;
+			max-width: 500px;
+			min-width: 20px;
+			text-align: left;
+		}
+		
+		#utalk img {
+			width: 40px;
+			height: 40px;
+			float: left;
+			display: block;
+			border-radius: 5px;
+			margin-right: 10px;
+		}
+		
+		#utalk #mp {
+			line-height: 40px;
+			padding: 0 15px;
+			background: #e6ebe1;
+			float: left;
+			border-radius: 5px;
+		}
+		
+		.p2:hover {
+			background: #43464c;
+			cursor: pointer;
+		}
+		
+		#aaaa {
+			height: 0px;
+		}
+		
+		.show {
+			background: #43464c;
+			cursor: pointer;
+		}
+		#startpic {
+			float: right;
+			height: 700px;
+			width: 720px;
+			background: #eeeeee;
+			position: relative;
+			border-radius: 5px;
+		}
+		
+		#startpic #rightbox1 {
+			height: 50px;
+			width: 680px;
+			margin-left: 20px;
+			text-align: center;
+			font-size: 17px;
+			line-height: 50px;
+			border-bottom: 1px solid #d6d6d6;
+		}
+		
+		#startpic #rightbox2 {
+			height: 420px;
+			width: 680px;
+			padding-left: 20px;
+			padding-right: 20px;
+			padding-top: 50px;
+			text-align: center;
+			font-size: 16px;
+			background: url(images/background.jpg) no-repeat center;
+
+		}
+	</style>
+</head>
+
+<body>
+	<div id="divbox">
+		<div id="divleft">
+			<p class="p1">
+				<img src="images/1.jpg" alt="">
+				<span>watermelon</span>
+			</p>
+			<input type="text" placeholder="search users..." class="seh">
+			<p class="p2">
+				<img src="images/2.jpg" class="imgs">
+				<span class="spans">Alex</span>
+			</p>
+			<p class="p2">
+				<img src="images/3.jpg" class="imgs">
+				<span class="spans">吾皇万万岁</span>
+			</p>
+			<p class="p2">
+				<img src="images/4.jpg" class="imgs">
+				<span class="spans">Timo</span>
+			</p>
+			<p class="p2">
+				<img src="images/5.jpg" class="imgs">
+				<span class="spans">最后一只恐龙</span>
+			</p>
+			<p class="p2">
+				<img src="images/6.jpg" class="imgs">
+				<span class="spans">JavaScript</span>
+			</p>
+		</div>
+		<div id="divright">
+			<div id="rightbox1"></div>
+			<div id="rightbox2">
+				<!--<div id="mytalk">
+					<img src="images/1.jpg" id="img1">
+					<p id="mp">啊哈哈哈哈哈哈哈</p>
+				</div>
+				<div id="utalk">
+					<img src="images/2.jpg" id="img1">
+					<p id="mp">啊哈哈哈哈哈哈哈</p>
+				</div>-->
+			</div>
+			<textarea id="text" placeholder="按 Ctrl + Enter 发送"></textarea>
+			<input type="button" value="发送" id="send">
+		</div>
+		<div id="startpic">
+			<div id="rightbox1"></div>
+			<div id="rightbox2"></div>
+		</div>
+	</div>
+	<a id="aaaa"></a>
+</body>
+<script>
+	function $(id) {
+		return document.getElementById(id)
+	}
+	var ptalk = document.getElementsByTagName("p");
+	for (var i = 1; i < ptalk.length; i++) {
+		ptalk[i].index = i;
+		ptalk[i].onclick = function () {
+			$("divright").style.display = "block";
+			$("startpic").style.display = "none";
+			for (var j = 1; j < ptalk.length; j++) {
+				ptalk[j].className = "p2";
+			}
+			this.className = "show";
+			$("rightbox2").innerHTML = "";
+			$("text").value = "";
+			$("rightbox1").innerHTML = ptalk[this.index].children[1].innerHTML;
+			var a = this.index;
+			$("send").addEventListener("click",click,false);
+			document.onkeydown = function(){
+				var e = event||window.event;
+				if(e.keyCode == 13&&e.ctrlKey){
+					click();
+					$("text").value = "";
+				}
+			}
+            
+            function click() {
+				var newTalk = "";
+				var uTalk = "";
+				newTalk += "<div id=\"mytalk\">";
+				newTalk += "<img src=\"images/1.jpg\" id=\"img1\">";
+				newTalk += "<p id=\"mp\">" + $("text").value + "</p>";
+				newTalk += "</div>";
+				$("rightbox2").innerHTML += newTalk;
+				$("rightbox2").scrollTop = $("rightbox2").scrollHeight;
+				var xhr = new XMLHttpRequest();
+				xhr.onreadystatechange = function () {
+					if (xhr.readyState == 4) {
+						if (xhr.status == 200) {
+							var result = JSON.parse(xhr.responseText);
+                            //console.log(result)
+							uTalk += "<div id=\"utalk\">"
+							uTalk += "<img src=\"images/" + (a + 1) + ".jpg\" id=\"img1\">"
+							uTalk += "<p id=\"mp\">" + result.text + "</p>"
+							uTalk += "</div>"
+							var timer;
+							timer = setTimeout(function () {
+								$("rightbox2").innerHTML += uTalk;
+								$("rightbox2").scrollTop = $("rightbox2").scrollHeight;
+							}, 500);							
+							
+						}
+					}
+				}
+				xhr.open("get", "http://apis.baidu.com/turing/turing/turing?key=879a6cb3afb84dbf4fc84a1df2ab7319&info=" + $("text").value + " &userid=eb2edb736'", true);
+				xhr.setRequestHeader("apikey", "314d759ac1d4b3259129c5e9be2c2e1c");
+				xhr.send();
+
+			}
+		}
+	}
+</script>
+
+</html>
